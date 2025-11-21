@@ -58,10 +58,5 @@ namespace CalculatorNew
                 }
             }
         }
-        //public string ReadString(string message)
-        //{
-        //    string UserInput = Console.WriteLine($"{message} : ");
-        //    if (string.IsNullOrEmpty(UserInput))
-        //}
     }
 }
