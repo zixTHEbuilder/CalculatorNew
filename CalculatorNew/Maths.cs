@@ -8,9 +8,9 @@ namespace CalculatorNew
     public class Maths
     {
         Input input = new Input();
-        List<int> Numbers = new List<int>();
         public int Addition()
         {
+            List<int> Numbers = new List<int>();
             while (true)
             {
                 int add = input.ReadInt("Enter numbers to Add (Enter \"0\" to add all) ");
@@ -19,7 +19,6 @@ namespace CalculatorNew
                     int sum = 0;
                     foreach (int number in Numbers)
                         sum += number;
-                    Console.WriteLine(sum);
                     return sum;
                 }
                 else
@@ -33,6 +32,7 @@ namespace CalculatorNew
         {
             while (true)
             {
+                List<int> Numbers = new List<int>();
                 int sub = input.ReadInt("Enter numbers to Subtract (Enter \"0\" to subtract the numbers from the first number) ");
                 if (sub == 0)
                 {
@@ -55,6 +55,7 @@ namespace CalculatorNew
         {
             while (true)
             {
+                List<int> Numbers = new List<int>();
                 int multiply = input.ReadInt("Enter numbers to multiply (Enter \"0\" to multiply all) ");
                 if (multiply == 0)
                 {
@@ -75,21 +76,18 @@ namespace CalculatorNew
         }
         public void Division()
         {
-            while (true)
-            {
-                double dividend = input.ReadDouble("Enter a number to divide (Dividend)");
-                double divisor = input.ReadDouble("Enter a number to divide it by (Divisor)");
-                Console.WriteLine($"{dividend} Divided by {divisor} is {dividend/divisor} and the Remainder is {dividend%divisor}");
-                break;
-            }
+            double dividend = input.ReadDouble("Enter a number to divide (Dividend)");
+            double divisor = input.ReadDouble("Enter a number to divide it by (Divisor)");
+            Console.WriteLine($"{dividend} Divided by {divisor} is {dividend / divisor} and the Remainder is {dividend % divisor}");
         }
-        public void Root()
+        public double Root()
         {
             double root = input.ReadInt("Enter a number whose root you want to find");
             double ans = Math.Sqrt(root);
+            return ans;
             Console.WriteLine ("{0:0.00}",ans); 
         }
-        public void SquareAndCube()
+        public int SquareAndCube()
         {
             while (true)
             {
@@ -97,14 +95,12 @@ namespace CalculatorNew
                 if (UserChoice == 2)
                 {
                     int square = input.ReadInt("Enter the number whose square you want to find");
-                    Console.WriteLine(square * square);
-                    break;
+                    return square * square;
                 }
                 else if (UserChoice == 3)
                 {
                     int cube = input.ReadInt("Enter the number whose cube you want to find");
-                    Console.WriteLine(cube * cube);
-                    break;
+                    return cube * cube;
                 }
                 else
                 {
@@ -112,7 +108,7 @@ namespace CalculatorNew
                 }
             }
         }
-        public void Secret()
+        public int Secret()
         {
             int loopNumber = input.ReadInt("Enter a number that u wanna add power to");
             int loopTime = input.ReadInt("Enter the power (exponent)");
@@ -121,7 +117,7 @@ namespace CalculatorNew
             {
                 result = result * loopNumber;
             }
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

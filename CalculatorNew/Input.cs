@@ -7,28 +7,13 @@ namespace CalculatorNew
 {
     public class Input
     {
-        public int ReadInt(string message)
+        public int ReadInt(string message, bool writeLine = false)
         {
             while (true)
             {
-                Console.Write($"{message} : ");
-                string UserInput = Console.ReadLine();
-                bool sucesss = int.TryParse(UserInput, out int value);
-                if (sucesss)
-                {
-                    return value;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Input, Please enter a valid number");
-                }
-            }
-        }
-        public int ReadIntWriteLine(string message)
-        {
-            while (true)
-            {
-                Console.WriteLine($"{message}");
+                if (writeLine == true)
+                    Console.WriteLine(message);
+                else { Console.Write($"{message} : "); }
                 string UserInput = Console.ReadLine();
                 bool sucesss = int.TryParse(UserInput, out int value);
                 if (sucesss)

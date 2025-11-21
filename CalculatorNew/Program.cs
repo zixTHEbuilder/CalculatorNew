@@ -10,20 +10,23 @@ class Program
         Console.WriteLine("Calculator");
         while (true)
         { 
-            int ProgramSelect = input.ReadIntWriteLine("Enter the program number you want to use \n1. Addition \n2. Subtraction \n3. Multiplication \n4. Divison \n5. Finding Root \n6. Finding Square/Cube \n7. Secret \n8. Exit Program");
+            int ProgramSelect = input.ReadInt("Enter the program number you want to use \n1. Addition \n2. Subtraction \n3. Multiplication \n4. Divison \n5. Finding Root \n6. Finding Square/Cube \n7. Secret \n8. Exit Program", writeLine : true);
             switch (ProgramSelect)
             {
                 case 1:
                     {
-                        maths.Addition(); break;
+                        int sum = maths.Addition();
+                        Console.WriteLine(sum); break;
                     }
                 case 2:
                     {
-                        maths.Subtraction(); break;
+                        int sum = maths.Subtraction();
+                        Console.WriteLine(sum); break;
                     }
                 case 3:
                     {
-                        maths.Multiplication(); break;
+                        int sum = maths.Multiplication();
+                        Console.WriteLine(sum); break;
                     }
                 case 4:
                     {
@@ -31,19 +34,22 @@ class Program
                     }
                 case 5:
                     {
-                        maths.Root(); break;
+                       double answer = maths.Root();
+                       Console.WriteLine("{0:0.00}", answer); break;
                     }
                 case 6:
                     {
-                        maths.SquareAndCube(); break;
+                        int answer = maths.SquareAndCube();
+                        Console.WriteLine("{0:0.00}", answer); break;
                     }
                 case 7:
                     {
-                        maths.Secret(); break;
+                        int result = maths.Secret();
+                        Console.WriteLine(result); break;
                     }
                 case 8:
                     {
-                        Console.WriteLine("Exiting Program");
+                        Console.WriteLine("Exiting Program...");
                         return;
                     }
                 default: Console.WriteLine("Error, Please Enter a valid number to choose a program"); break;
