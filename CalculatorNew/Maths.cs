@@ -8,9 +8,9 @@ namespace CalculatorNew
     public class Maths
     {
         Input input = new Input();
+        List<int> Numbers = new List<int>();
         public int Addition()
         {
-            List<int> Numbers = new List<int>();
             while (true)
             {
                 int add = input.ReadInt("Enter numbers to Add (Enter \"0\" to add all) ");
@@ -30,9 +30,9 @@ namespace CalculatorNew
         }
         public int Subtraction()
         {
+            List<int> Numbers = new List<int>();
             while (true)
             {
-                List<int> Numbers = new List<int>();
                 int sub = input.ReadInt("Enter numbers to Subtract (Enter \"0\" to subtract the numbers from the first number) ");
                 if (sub == 0)
                 {
@@ -42,7 +42,6 @@ namespace CalculatorNew
                         sum -= Numbers[i];
                     }
                     Numbers.Clear();
-                    Console.WriteLine(sum);
                     return sum;
                 }
                 else
@@ -53,9 +52,9 @@ namespace CalculatorNew
         }
         public int Multiplication()
         {
+            List<int> Numbers = new List<int>();
             while (true)
             {
-                List<int> Numbers = new List<int>();
                 int multiply = input.ReadInt("Enter numbers to multiply (Enter \"0\" to multiply all) ");
                 if (multiply == 0)
                 {
@@ -65,7 +64,6 @@ namespace CalculatorNew
                         sum *= item;
                     }
                     Numbers.Clear();
-                    Console.WriteLine(sum);
                     return sum;
                 }
                 else
@@ -85,7 +83,6 @@ namespace CalculatorNew
             double root = input.ReadInt("Enter a number whose root you want to find");
             double ans = Math.Sqrt(root);
             return ans;
-            Console.WriteLine ("{0:0.00}",ans); 
         }
         public int SquareAndCube()
         {
