@@ -8,9 +8,9 @@ namespace CalculatorNew
     public class Maths
     {
         Input input = new Input();
-        List<int> Numbers = new List<int>();
         public int Addition()
         {
+            List<int> Numbers = new List<int>();
             while (true)
             {
                 int add = input.ReadInt("Enter numbers to Add (Enter \"0\" to add all) ");
