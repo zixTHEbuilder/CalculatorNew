@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Net;
 using System.Text;
 
 namespace CalculatorNew
@@ -14,19 +15,15 @@ namespace CalculatorNew
             while (true)
             {
                 int add = input.ReadInt("Enter numbers to Add (Enter \"0\" to add all) ");
-                if (add == 0)
-                {
-                    int sum = 0;
-                    foreach (int number in Numbers)
-                        sum += number;
-                    return sum;
-                }
-                else
-                {
-                    Numbers.Add(add);
-                }
-
+                if (add == 0) break;
+                Numbers.Add(add);
             }
+
+            int sum = 0;
+            foreach (var number in Numbers)
+                sum += number;
+
+            return sum;
         }
         public int Subtraction()
         {
@@ -34,21 +31,16 @@ namespace CalculatorNew
             while (true)
             {
                 int sub = input.ReadInt("Enter numbers to Subtract (Enter \"0\" to subtract the numbers from the first number) ");
-                if (sub == 0)
-                {
-                    int sum = Numbers[0];
-                    for (int i = 1; i < Numbers.Count; i++)
-                    {
-                        sum -= Numbers[i];
-                    }
-                    Numbers.Clear();
-                    return sum;
-                }
-                else
-                {
-                    Numbers.Add(sub);
-                }
+                if (sub == 0) break;
+                Numbers.Add(sub);
+                
             }
+            int sum = Numbers[0];
+            for (int i = 1; i < Numbers.Count; i++)
+            {
+                sum-=Numbers[i];   
+            }
+            return sum;
         }
         public int Multiplication()
         {
@@ -56,21 +48,15 @@ namespace CalculatorNew
             while (true)
             {
                 int multiply = input.ReadInt("Enter numbers to multiply (Enter \"0\" to multiply all) ");
-                if (multiply == 0)
-                {
-                    int sum = 1;
-                    foreach (var item in Numbers)
-                    {
-                        sum *= item;
-                    }
-                    Numbers.Clear();
-                    return sum;
-                }
-                else
-                {
-                    Numbers.Add(multiply);
-                }
+                if (multiply == 0) break;
+                Numbers.Add(multiply);
             }
+            int sum = 1;
+            foreach (var item in Numbers)
+            {
+                sum*=item;
+            }
+            return sum;
         }
         public void Division()
         {
