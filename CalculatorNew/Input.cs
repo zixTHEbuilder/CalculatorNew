@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace CalculatorNew
@@ -27,7 +28,7 @@ namespace CalculatorNew
         {
             while (true)
             {
-                Console.WriteLine($"{message} : ");
+                Console.WriteLine($"{message}");
                 string UserInput = Console.ReadLine();
                 bool sucesss = int.TryParse(UserInput, out int value);
                 if (sucesss)
@@ -40,5 +41,27 @@ namespace CalculatorNew
                 }
             }
         }
+        public double ReadDouble(string message)
+        {
+            while (true)
+            {
+                Console.WriteLine($"{message} : ");
+                string UserInput = Console.ReadLine();
+                bool success = Double.TryParse(UserInput, out double value);
+                if (success)
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input, Please enter a valid number");
+                }
+            }
+        }
+        //public string ReadString(string message)
+        //{
+        //    string UserInput = Console.WriteLine($"{message} : ");
+        //    if (string.IsNullOrEmpty(UserInput))
+        //}
     }
 }
